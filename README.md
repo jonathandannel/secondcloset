@@ -409,3 +409,8 @@ Returns a total pricing quote based on the customer's items, pricing plan, and p
 - Create .env file with PORT and MONGO_CONNECTION keys, set PORT to a port you want your local server listening on
 - Create a Mongo Atlas cluster and set the value of MONGO_CONNECTION to your connection URI in the following format: `mongodb+srv://<user>:<pw>@<cluster>/<dbname>?retryWrites=true&w=majority`
 - Run `npm run dev`
+
+### TODO:
+
+- Unit test each endpoint
+- Fix bug with modified pricing plans leaving behind artifacts of non-matching pricing details. For now, users may set those fields to null with no ill effects.
