@@ -120,9 +120,12 @@ router.patch('/modify', async (req, res) => {
           )
         : await CustomerBase.findOne(query);
 
+    const inputsWithoutPricingPlan = inputs;
+    delete inputsWithoutPricingPlan.pricingPlan;
+
     // Set the rest of the fields
-    for (const key in inputs) {
-      customer[key] = inputs[key];
+    for (const key in inputsWithoutPricingPlan) {
+      customer[key] = inputsWithoutPricingPlan[key];
     }
 
     await customer.save();
