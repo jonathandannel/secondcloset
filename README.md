@@ -83,7 +83,7 @@ Applies a pricing plan that discounts the first 100 items at a certain rate, the
 }
 ```
 
-### You may explicitly specify a `pricingDetails` object with your request if you choose to. If you do not, the above defaults will be set depending on the value of the pricing plan field. For example, sending the following:
+You may explicitly specify a `pricingDetails` object with your request if you choose to. If you do not, the above defaults will be set depending on the value of the pricing plan field. For example, sending the following:
 
 ```json
 {
@@ -162,7 +162,7 @@ Takes a `customerId`. Returns the customer pricing object that matches that ID.
 
 Similar to create, you may change `pricingPlan`, `pricingDetails`, or `basePrice` here. By sending an object mapping.
 
-### TODO: Encountered a bug with previous plans leaving behind old `pricingDetails`. Will be fixed in next release.
+TODO: Encountered a bug with previous plans leaving behind old `pricingDetails`. Will be fixed in next release.
 
 For now, you may effectively remove a field by setting it to `null`.
 
