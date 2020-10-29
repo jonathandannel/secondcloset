@@ -172,7 +172,7 @@ router.get('/quote', async (req, res) => {
   return res.json({
     success: true,
     message: 'Quote calculated successfully',
-    result: quote,
+    result: quote.toString(),
   });
 });
 
