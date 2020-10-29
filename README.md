@@ -162,6 +162,10 @@ Takes a `customerId`. Returns the customer pricing object that matches that ID.
 
 Similar to create, you may change `pricingPlan`, `pricingDetails`, or `basePrice` here. By sending an object mapping.
 
+### TODO: Encountered a bug with previous plans leaving behind old `pricingDetails`. Will be fixed in next release.
+
+For now, you may effectively remove a field by setting it to `null`.
+
 ```json
 {
   "customerId": "pinterest",
