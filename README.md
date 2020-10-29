@@ -32,7 +32,7 @@ Applies a fixed discount to the overall total value of items. Adds a `pricingDet
 ```json
 {
   "customerId": "amazon",
-  "pricingPlan": "flat_pricing_plan",
+  "pricingPlan": "flat_discount_plan",
   "pricingDetails": {
     "discountPercentage": "10"
   }
