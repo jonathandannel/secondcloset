@@ -188,7 +188,7 @@ router.get('/find', async (req, res) => {
 });
 
 router.post('/remove', async (req, res) => {
-  const customerId = req.body;
+  const { customerId } = req.body;
   try {
     await CustomerBase.findOneAndDelete({ customerId: clean(customerId) });
     return res.json({
