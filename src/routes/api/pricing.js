@@ -161,9 +161,10 @@ router.get('/find', async (req, res) => {
       result: null,
     });
   }
-  const cleanId = clean(customerId);
   try {
-    const customer = await CustomerBase.findOne({ customerId: cleanId });
+    const customer = await CustomerBase.findOne({
+      customerId: clean(customerId),
+    });
     if (customer) {
       return res.json({
         success: true,
@@ -181,6 +182,24 @@ router.get('/find', async (req, res) => {
     return res.json({
       success: false,
       message: 'A customer ID must be provided',
+      result: err,
+    });
+  }
+});
+
+router.post('/remove', async (req, res) => {
+  const customerId = req.body;
+  try {
+    await CustomerBase.findOneAndDelete({ customerId: clean(customerId) });
+    return res.json({
+      success: true,
+      message: `Customer ${customerId} removed successfully`,
+      result: null,
+    });
+  } catch (err) {
+    return res.json({
+      success: false,
+      message: `Encountered a problem removing customer ${customerId}`,
       result: err,
     });
   }
